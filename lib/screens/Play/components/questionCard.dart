@@ -24,26 +24,29 @@ class questionCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(25),
       ),
       child: Expanded(
-        child: Column(
-          children: [
-            Text(
-              question.question,
-              style: const TextStyle(
-                fontSize: smallFont,
-                fontWeight: FontWeight.w500,
-                color: blackColor,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              Text(
+                question.question,
+                style: const TextStyle(
+                  fontSize: smallFont,
+                  fontWeight: FontWeight.w500,
+                  color: blackColor,
+                ),
               ),
-            ),
-            const SizedBox(height: defaultPadding / 2),
-            ...List.generate(
-              question.options.length,
-              (index) => option(
-                index: index,
-                text: question.options[index],
-                press: () => _controller.checkAnswer(question, index),
+              const SizedBox(height: defaultPadding / 2),
+              ...List.generate(
+                question.options.length,
+                (index) => option(
+                  index: index,
+                  text: question.options[index],
+                  press: () => _controller.checkAnswer(question, index),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -2,7 +2,8 @@ import 'package:app_emi/constants.dart';
 import 'package:app_emi/screens/Welcome/WelcomePlay_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:websafe_svg/websafe_svg.dart';
+
+import 'Widgets/HeaderHome.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class Home extends StatelessWidget {
   void handleNavigationPressPlay(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (_) => WelcomePlay_page(),
+        builder: (_) => const WelcomePlay_page(),
       ),
     );
   }
@@ -18,16 +19,28 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xffEDF1F5),
       body: Stack(
-        fit: StackFit.expand,
         children: [
-          WebsafeSvg.asset("assets/icons/bg.svg", fit: BoxFit.fill),
+          ListView(
+            padding: const EdgeInsets.only(top: 0),
+            physics: const BouncingScrollPhysics(),
+            children: [
+              Stack(
+                children: const [
+                  HeaderHome(),
+                  HeaderHomeNaranja(),
+                  HeaderHomeMorado(),
+                ],
+              )
+            ],
+          ),
           Padding(
             padding: const EdgeInsets.all(defaultPadding),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Spacer(),
+                // const SizedBox(height: 50),
                 const Text(
                   "Bienvenido",
                   style: TextStyle(
@@ -58,7 +71,7 @@ class Home extends StatelessWidget {
                         BoxShadow(
                             offset: const Offset(5, 10),
                             blurRadius: 10,
-                            color: boxShadowColor.withOpacity(0.2)),
+                            color: boxShadowColor.withOpacity(0.9)),
                       ]),
                   child: Container(
                     padding:
@@ -102,7 +115,7 @@ class Home extends StatelessWidget {
                         BoxShadow(
                             offset: const Offset(5, 10),
                             blurRadius: 10,
-                            color: boxShadowColor.withOpacity(0.2)),
+                            color: boxShadowColor.withOpacity(0.9)),
                       ]),
                   child: Container(
                     padding:
@@ -133,12 +146,12 @@ class Home extends StatelessWidget {
                 ),
                 const Spacer(),
                 InkWell(
-                  onTap: () => Get.to(WelcomePlay_page()),
+                  onTap: () => Get.to(const WelcomePlay_page()),
                   child: Container(
                     width: double.infinity,
                     padding: const EdgeInsets.all(defaultPadding * 0.75),
                     decoration: BoxDecoration(
-                      gradient: primaryGradient,
+                      gradient: thirdGradient,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Text(

@@ -1,3 +1,4 @@
+import 'package:app_emi/Home.dart';
 import 'package:app_emi/constants.dart';
 import 'package:app_emi/controllers/controllerQuestions.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,26 @@ class score_page extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: mediumFont,
                   color: secondaryColor,
+                ),
+              ),
+              const Spacer(flex: 3),
+              InkWell(
+                onTap: () => Get.to(const Home()),
+                child: Padding(
+                  padding: const EdgeInsets.all(defaultPadding),
+                  child: Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(defaultPadding * 0.75),
+                    decoration: BoxDecoration(
+                      gradient: primaryGradient,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Text(
+                      "Volver",
+                      style: TextStyle(color: Colors.white),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
                 ),
               ),
               const Spacer(flex: 3),

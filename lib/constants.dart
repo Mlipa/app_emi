@@ -18,14 +18,22 @@ const greenColor = Color(0xFF6AC259);
 const redColor = Color(0xFFE92E30);
 const grayColor = Color(0xFFC1C1C1);
 const blackColor = Color(0xFF101010);
-const boxShadowColor = Color(0x323781);
+const blueColor = Color(0x144570);
+const yellowColor = Color(0xF4B909);
+const boxShadowColor = Color(0X364156);
 const primaryGradient = LinearGradient(
-  colors: [Color(0xFF46A0AE), Color(0xFF00FFCB)],
+  colors: [Color(0xFFA8AEC1), Color(0xFFB5D2CB)],
   begin: Alignment.centerLeft,
   end: Alignment.centerRight,
 );
 const secondaryGradient = LinearGradient(
-  colors: [Color(0x293559), Color(0x323781)],
+  colors: [Color(0xff11151C), Color(0xff212D40)],
+  begin: Alignment.centerLeft,
+  end: Alignment.centerRight,
+);
+
+const thirdGradient = LinearGradient(
+  colors: [Color(0xFF0D3D66), Color(0xFF0D3D90)],
   begin: Alignment.centerLeft,
   end: Alignment.centerRight,
 );
