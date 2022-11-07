@@ -1,4 +1,4 @@
-import 'package:app_emi/constants.dart';
+import 'package:app_emi/utils/constants.dart';
 import 'package:app_emi/controllers/controllerQuestions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';

@@ -1,5 +1,5 @@
-import 'package:app_emi/Home.dart';
-import 'package:app_emi/constants.dart';
+import 'package:app_emi/initial.dart';
+import 'package:app_emi/utils/constants.dart';
 import 'package:app_emi/controllers/controllerQuestions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -36,7 +36,7 @@ class score_page extends StatelessWidget {
               ),
               const Spacer(flex: 3),
               InkWell(
-                onTap: () => Get.to(const Home()),
+                onTap: () => Get.off(Initial()),
                 child: Padding(
                   padding: const EdgeInsets.all(defaultPadding),
                   child: Container(

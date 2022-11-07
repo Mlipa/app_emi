@@ -1,7 +1,7 @@
 import 'package:app_emi/controllers/controllerQuestions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:app_emi/constants.dart';
+import 'package:app_emi/utils/constants.dart';
 
 class option extends StatelessWidget {
   const option({
@@ -57,7 +57,7 @@ class option extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "${index + 1}. ${text}",
+                  "${index + 1}. $text",
                   style: TextStyle(
                     fontSize: semiSmallFont,
                     color: getTheRightColor(),

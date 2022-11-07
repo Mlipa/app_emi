@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "370649059263",
+    "project_id": "app-emi-d2bf6",
+    "storage_bucket": "app-emi-d2bf6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370649059263:android:056e79b6aa7ab04cbfdb0a",
+        "android_client_info": {
+          "package_name": "com.example.app_emi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "370649059263-jt1muu2se55eb2ca4go4ipqh6vntrca7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCup7lVndGaSYgkdx9F_nTWrgIEnW-zHuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "370649059263-jt1muu2se55eb2ca4go4ipqh6vntrca7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "370649059263-iih60ce10e6p34g1g89v6t3gpcpl04te.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.appEmi"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

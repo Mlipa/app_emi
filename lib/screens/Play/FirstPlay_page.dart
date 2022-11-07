@@ -8,7 +8,7 @@ class FirstPlay_page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    controllerQuestions _controller = Get.put(controllerQuestions());
+    controllerQuestions controller = Get.put(controllerQuestions());
     return Scaffold(
       // resizeToAvoidBottomInset: false,
       extendBodyBehindAppBar: true,
@@ -16,13 +16,13 @@ class FirstPlay_page extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
-          ElevatedButton(
-            onPressed: _controller.nextQuestion,
+          FlatButton(
+            onPressed: controller.nextQuestion,
             child: const Text("skip"),
           )
         ],
       ),
-      body: body(),
+      body: const body(),
     );
   }
 }

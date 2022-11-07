@@ -9,12 +9,12 @@ class controllerQuestions extends GetxController
   late AnimationController _animationController;
   late Animation _animation;
 
-  Animation get animation => this._animation;
+  Animation get animation => _animation;
 
   late PageController _pageController;
-  PageController get pageController => this._pageController;
+  PageController get pageController => _pageController;
 
-  List<Question> _question = question_data
+  final List<Question> _question = question_data
       .map(
         (question) => Question(
           id: question['id'],
@@ -25,22 +25,22 @@ class controllerQuestions extends GetxController
       )
       .toList();
 
-  List<Question> get questions => this._question;
+  List<Question> get questions => _question;
 
   bool _isAnswered = false;
-  bool get isAnwered => this._isAnswered;
+  bool get isAnwered => _isAnswered;
 
   late int _correctAnswer;
-  int get correctAnswerd => this._correctAnswer;
+  int get correctAnswerd => _correctAnswer;
 
   late int _selectAnswer;
-  int get selectAnswer => this._selectAnswer;
+  int get selectAnswer => _selectAnswer;
 
-  RxInt _questionNumber = 1.obs;
-  RxInt get questionNumber => this._questionNumber;
+  final RxInt _questionNumber = 1.obs;
+  RxInt get questionNumber => _questionNumber;
 
   int _numOfCorrectAnswer = 0;
-  int get numOfCorrectAnswer => this._numOfCorrectAnswer;
+  int get numOfCorrectAnswer => _numOfCorrectAnswer;
 
   @override
   void onClose() {
@@ -74,7 +74,7 @@ class controllerQuestions extends GetxController
     _animationController.stop();
     update();
 
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 3), () {
       nextQuestion();
     });
   }
@@ -83,17 +83,21 @@ class controllerQuestions extends GetxController
     if (_questionNumber.value != _question.length) {
       _isAnswered = false;
       _pageController.nextPage(
-          duration: Duration(milliseconds: 2), curve: Curves.ease);
+          duration: const Duration(milliseconds: 2), curve: Curves.ease);
 
       _animationController.reset();
 
       _animationController.forward().whenComplete(() => nextQuestion());
     } else {
-      Get.to(score_page());
+      Get.to(const score_page());
     }
   }
 
   void updateTheQnNum(int index) {
     _questionNumber.value = index + 1;
+  }
+
+  void resetTheQnNum() {
+    _numOfCorrectAnswer = 0;
   }
 }
